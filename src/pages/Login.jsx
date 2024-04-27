@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../components/SocialLogin";
 import { useForm } from "react-hook-form";
 import useAuth from "../hooks/useAuth";
@@ -8,14 +8,15 @@ const Login = () => {
     const { signInUser, setUser, } = useAuth();
 
     const { register, handleSubmit, formState: { errors }, } = useForm();
+    const navigate = useNavigate();
     const onSubmit = data => {
         const { email, password } = data;
         signInUser(email, password)
             .then(result => {
-                if (result.user) {
-                    alert('hello')
-                    setUser(result.user);
-                }
+                setUser(result.user);
+                navigate('/')
+
+
 
             })
             .catch(error => console.log(error))

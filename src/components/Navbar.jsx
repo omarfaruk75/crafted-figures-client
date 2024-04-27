@@ -1,27 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
-
-
-
-// const Menus = () => {
-
-
-//const links = { 'Home' 'All Art & craft Items', 'Add Craft Item', 'My Art&Craft List'};
-// const links = ['Home', 'All Art & craft Items', 'Add Craft Item', 'My Art&Craft List'];
-// return (
-//     <>
-//         {
-//             links.map(link => <li key={link}>
-//                 <Link to={`/${link}`} className="btn btn-sm  btn-ghost">{link}</Link>
-//             </li>)
-//         }
-//     </>
-// )
-// }
 const Navbar = () => {
     const { logOut, user } = useAuth();
-    // console.log(user);
 
     const Links = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
@@ -29,6 +10,7 @@ const Navbar = () => {
         <li><NavLink to={'/addCraftitem'}>Add Craft Item</NavLink></li>
         <li><NavLink to={'/mycraftitem'}>My Art&Craft List</NavLink></li>
     </>
+
     return (
 
         <div className="navbar bg-base-100">

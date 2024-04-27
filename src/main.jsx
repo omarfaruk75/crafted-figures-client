@@ -8,6 +8,11 @@ import Register from './pages/Register.jsx'
 import './index.css'
 import FirebaseProvider from './Provider/FirebaseProvider.jsx'
 import Home from './pages/Home/Home.jsx'
+import AllArtAllCraft from './pages/AllArtAllCraft.jsx'
+import AddCraftItem from './pages/AddCraftItem.jsx'
+import MyCraftItem from './pages/MyCraftItem.jsx'
+import PrivateRoute from './components/PrivateRoute.jsx'
+
 
 const router = createBrowserRouter([
   {
@@ -16,15 +21,29 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Home></Home>
       },
       {
-        path: "/login",
+        path: '/allartallcraft',
+        element: <AllArtAllCraft></AllArtAllCraft>
+
+      },
+      {
+        path: '/addCraftitem',
+        element: <PrivateRoute><AddCraftItem></AddCraftItem></PrivateRoute>
+      },
+      {
+        path: '/mycraftitem',
+        element: <PrivateRoute><MyCraftItem></MyCraftItem></PrivateRoute>
+      }
+      ,
+      {
+        path: '/login',
         element: <Login></Login>
       },
       {
-        path: "register",
+        path: '/register',
         element: <Register></Register>
       }
     ]

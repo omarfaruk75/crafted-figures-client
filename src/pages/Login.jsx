@@ -12,8 +12,11 @@ const Login = () => {
         const { email, password } = data;
         signInUser(email, password)
             .then(result => {
+                if (result.user) {
+                    alert('hello')
+                    setUser(result.user);
+                }
 
-                setUser(result.user);
             })
             .catch(error => console.log(error))
     }

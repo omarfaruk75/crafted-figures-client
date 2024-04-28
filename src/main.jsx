@@ -12,6 +12,7 @@ import AllArtAllCraft from './pages/AllArtAllCraft.jsx'
 import AddCraftItem from './pages/AddCraftItem.jsx'
 import MyCraftItem from './pages/MyCraftItem.jsx'
 import PrivateRoute from './components/PrivateRoute.jsx'
+import UpdateCraftItem from './components/UpdateCraftItem.jsx'
 
 
 const router = createBrowserRouter([
@@ -22,11 +23,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/additem')
       },
       {
         path: '/allartallcraft',
-        element: <AllArtAllCraft></AllArtAllCraft>
+        element: <AllArtAllCraft></AllArtAllCraft>,
+
 
       },
       {
@@ -45,6 +48,11 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/updateItem/:id',
+        element: <UpdateCraftItem></UpdateCraftItem>,
+        loader: ({ params }) => fetch(`http://localhost:5000/additem/${params.id}`)
       }
     ]
   }

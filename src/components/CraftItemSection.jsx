@@ -50,7 +50,7 @@ const CraftItemSection = ({ craftItem }) => {
                     <div className="card-body">
                         <p className="card-title">Craft Item:<b>{itemName}</b></p>
 
-                        <p>Short Description:  {shortDescription}<Link className="text-primary">Read More</Link></p>
+                        <p>Short Description:  {shortDescription}<Link to={`/details/${_id}`} className="text-primary">Read More</Link></p>
                         <div className="flex flex-row justify-between">
                             <p><b>Sub Category</b>:{subCategory} </p>
                             <p><b>Customization</b> :{customizeAnswer} </p>

@@ -13,6 +13,7 @@ import AddCraftItem from './pages/AddCraftItem.jsx'
 import MyCraftItem from './pages/MyCraftItem.jsx'
 import PrivateRoute from './components/PrivateRoute.jsx'
 import UpdateCraftItem from './components/UpdateCraftItem.jsx'
+import DetailsCraftsItem from './components/DetailsCraftsItem.jsx'
 
 
 const router = createBrowserRouter([
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
       {
         path: '/updateItem/:id',
         element: <UpdateCraftItem></UpdateCraftItem>,
+        loader: ({ params }) => fetch(`http://localhost:5000/additem/${params.id}`)
+      },
+      {
+        path: '/details/:id',
+        element: <DetailsCraftsItem />,
         loader: ({ params }) => fetch(`http://localhost:5000/additem/${params.id}`)
       }
     ]

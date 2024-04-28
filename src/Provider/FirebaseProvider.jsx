@@ -12,6 +12,23 @@ const FirebaseProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     // console.log(user);
 
+    const [darkMode, setDarkMode] = useState(false);
+
+    useEffect(() => {
+        const body = document.querySelector('body');
+        if (darkMode) {
+            body.classList.add('dark');
+        } else {
+            body.classList.remove('dark');
+        }
+    }, [darkMode]);
+
+
+    const toggleDarkMode = () => {
+        setDarkMode(prevMode => !prevMode);
+    };
+
+
     //  create User Profile in Register Page
     const createUser = (email, password) => {
         setLoading(true);
@@ -64,7 +81,7 @@ const FirebaseProvider = ({ children }) => {
         return () => unsubscribe();
     }, [])
 
-    const allValue = { createUser, updateUserProfile, signInUser, googleSingIn, githubSignIn, twitterSignIn, user, setUser, logOut, loading }
+    const allValue = { createUser, updateUserProfile, signInUser, googleSingIn, githubSignIn, twitterSignIn, user, setUser, logOut, loading, toggleDarkMode, darkMode }
     return (
         <AuthContext.Provider value={allValue}>
             {children}

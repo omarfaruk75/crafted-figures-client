@@ -2,6 +2,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from "../hooks/useAuth";
+import Swal from "sweetalert2";
 
 
 
@@ -22,6 +23,12 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 setUser(result.user);
+                Swal.fire({
+                    title: 'Success',
+                    text: 'You Sccessfully Registered',
+                    icon: 'Success',
+                    confirmButtonText: 'Cool'
+                })
                 navigate('/');
 
             })

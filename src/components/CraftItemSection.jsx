@@ -18,7 +18,7 @@ const CraftItemSection = ({ craftItem }) => {
             if (result.isConfirmed) {
 
                 console.log('one item deleted')
-                fetch(`http://localhost:5000/additem/${_id}`, {
+                fetch(`https://crafted-figures-hk3xlhkxk-md-omar-faruks-projects-a0d552ed.vercel.app/additem/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

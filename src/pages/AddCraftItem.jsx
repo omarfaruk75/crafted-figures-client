@@ -44,7 +44,7 @@ const AddCraftItem = () => {
 
         const craftItem = { itemName, stockStatus, subCategory, shortDescription, price, rating, processingTime, image, customizeAnswer, user: displayName, email };
         // console.log(craftItem);
-        fetch("http://localhost:5000/additem", {
+        fetch("https://crafted-figures-hk3xlhkxk-md-omar-faruks-projects-a0d552ed.vercel.app/additem", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

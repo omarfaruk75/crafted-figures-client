@@ -28,12 +28,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/additem')
+        loader: () => fetch('https://crafted-figures-hk3xlhkxk-md-omar-faruks-projects-a0d552ed.vercel.app/additem')
       },
       {
         path: '/allartallcraft',
         element: <AllArtAllCraft></AllArtAllCraft>,
-        loader: () => fetch('http://localhost:5000/additem')
+        loader: () => fetch('https://crafted-figures-hk3xlhkxk-md-omar-faruks-projects-a0d552ed.vercel.app/additem')
 
 
       },
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: '/mycraftitem',
         element: <PrivateRoute><MyCraftItem></MyCraftItem></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/additem')
+        loader: () => fetch('https://crafted-figures-hk3xlhkxk-md-omar-faruks-projects-a0d552ed.vercel.app/additem')
       }
       ,
       {
@@ -58,12 +58,12 @@ const router = createBrowserRouter([
       {
         path: '/updateItem/:id',
         element: <UpdateCraftItem></UpdateCraftItem>,
-        loader: ({ params }) => fetch(`http://localhost:5000/additem/${params.id}`)
+        loader: ({ params }) => fetch(`https://crafted-figures-hk3xlhkxk-md-omar-faruks-projects-a0d552ed.vercel.app/additem/${params.id}`)
       },
       {
         path: '/details/:id',
         element: <PrivateRoute><DetailsCraftsItem /></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/additem/${params.id}`)
+        loader: ({ params }) => fetch(`https://crafted-figures-hk3xlhkxk-md-omar-faruks-projects-a0d552ed.vercel.app/additem/${params.id}`)
       },
       {
         path: '/footer',

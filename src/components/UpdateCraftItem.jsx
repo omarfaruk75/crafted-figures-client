@@ -24,7 +24,7 @@ const UpdateCraftItem = () => {
         const stockStatus = form.stockStatus.value;
         const updateCraftItem = { _id, itemName, stockStatus, subCategory, shortDescription, price, rating, processingTime, image, customizeAnswer };
         console.log(updateCraftItem);
-        fetch(`https://crafted-figures-hk3xlhkxk-md-omar-faruks-projects-a0d552ed.vercel.app/additem/${_id}`, {
+        fetch(`https://crafted-figures.vercel.app/additem/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

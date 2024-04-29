@@ -19,7 +19,7 @@ const SocialLogin = () => {
                 Swal.fire({
                     title: 'Successfylly Login',
                     text: 'Welcome to Blue Gallery',
-                    icon: 'Success',
+                    icon: 'success',
                     confirmButtonText: 'Cool'
                 })
                 navigate(from);

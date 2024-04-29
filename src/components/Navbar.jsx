@@ -6,28 +6,21 @@ import { useEffect, useState } from "react";
 
 
 
+
 const Navbar = () => {
     const { logOut, user } = useAuth();
     const [darkMode, setDarkMode] = useState(false);
-
-    useEffect(() => {
-        const body = document.querySelector('body');
-        if (darkMode) {
-            body.classList.add('dark');
-        } else {
-            body.classList.remove('dark');
-        }
-    }, [darkMode]);
-
     const toggleDarkMode = () => {
-        setDarkMode(prevMode => !prevMode);
+        setDarkMode(!darkMode);
+        toggleTheme(); // Call the toggleTheme function from the HTML script
     };
+
 
     const Links = <>
         <li><NavLink className="text-[#00aeef] font-medium" to={'/'}>Home</NavLink></li>
         <li><NavLink className="text-[#00aeef] font-medium" to={'/allartallcraft'}>All Art & craft Items</NavLink></li>
         <li><NavLink className="text-[#00aeef] font-medium" to={'/addCraftitem'}>Add Craft Item</NavLink></li>
-        <li><NavLink className="textc-[#00aeef] font-medium" to={'/mycraftitem'}>My Art&Craft List</NavLink></li>
+        <li><NavLink className="text-[#00aeef] font-medium" to={'/mycraftitem'}>My Art&Craft List</NavLink></li>
     </>;
 
     return (
@@ -50,7 +43,12 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <input onClick={toggleDarkMode} type="checkbox" className="toggle dark:bg-dark light:bg-light" checked={darkMode} />
+                <input
+                    onClick={toggleDarkMode}
+                    type="checkbox"
+                    className="toggle"
+                    checked={darkMode}
+                />
                 {user ? (
                     <div className="dropdown dropdown-end z-20">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

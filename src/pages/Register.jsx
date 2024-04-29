@@ -9,8 +9,6 @@ import Swal from "sweetalert2";
 const Register = () => {
 
     const { createUser, setUser } = useAuth();
-
-
     const { register, handleSubmit, formState: { errors }, } = useForm();
 
     //navigate page
@@ -26,7 +24,7 @@ const Register = () => {
                 Swal.fire({
                     title: 'Success',
                     text: 'You Sccessfully Registered',
-                    icon: 'Success',
+                    icon: 'success',
                     confirmButtonText: 'Cool'
                 })
                 navigate('/');
@@ -39,27 +37,27 @@ const Register = () => {
         <div className="my-12">
             <form onSubmit={handleSubmit(onSubmit)} className="form w-2/5 mx-auto space-y-6 border-2 border-blue-200 p-8 rounded-xl">
 
-                <h2 className="text-3xl text-center font-bold ">Register Please</h2>
+                <h2 className="text-3xl text-[#00aeef] text-center font-bold ">Register Please</h2>
                 <div>
-                    <p className="font-bold ">Name:*</p>
-                    <input type="text" name="name" placeholder="write your name" className="input input-bordered input-success w-full" {...register("name", { required: true })} />
+                    <p className=" text-[#302f2f] ">Name:*</p>
+                    <input type="text" name="displayName" placeholder="write your name" className="input input-bordered input-success w-full" {...register("displayName", { required: true })} />
                     {errors.name && <span className="text-red-500">Name is required</span>}
                 </div>
                 <div>
-                    <p className="font-bold ">Email:*</p>
+                    <p className=" text-[#302f2f]">Email:*</p>
                     <input type="email" name="email" placeholder="write your email address" className="input input-bordered input-success w-full" {...register("email", { required: "Email Address is required" })}
                         aria-invalid={errors.email ? "true" : "false"} />
                     {errors.email && <span className="text-red-500">Email is required</span>}
 
                 </div>
                 <div>
-                    <p className="font-bold ">Photo URL</p>
+                    <p className=" text-[#302f2f]">Photo URL</p>
                     <input type="text" name="photo" placeholder="photo url" className="input input-bordered input-success w-full" {...register("photo", { required: true })} />
 
                 </div>
 
                 <div>
-                    <p className="font-bold " >Password:*</p>
+                    <p className=" text-[#302f2f]" >Password:*</p>
                     <input type="password" name="password" placeholder="write your password" className="input input-bordered input-success w-full"  {...register("password", {
                         required: true,
                         minLength: 6,
@@ -76,12 +74,12 @@ const Register = () => {
                     )}
                 </div>
 
-                <button type="submit" className="btn btn-primary text-white w-full text-xl font-bold">Register</button>
+                <button type="submit" className="btn bg-[#00aeef]  text-white w-full text-xl font-bold">Register</button>
 
             </form>
 
 
-            <p className="text-center m-6">Do not have an account please <Link className=" text-primary font-bold" to={'/Login'}>Login</Link ></p>
+            <p className="text-center m-6">Do not have an account please <Link className=" text-[#00aeef]  font-bold" to={'/Login'}>Login</Link ></p>
         </div>
     );
 };

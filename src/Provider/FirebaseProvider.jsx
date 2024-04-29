@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { GithubAuthProvider, GoogleAuthProvider, TwitterAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
@@ -12,21 +13,6 @@ const FirebaseProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     // console.log(user);
 
-    const [darkMode, setDarkMode] = useState(false);
-
-    useEffect(() => {
-        const body = document.querySelector('body');
-        if (darkMode) {
-            body.classList.add('dark');
-        } else {
-            body.classList.remove('dark');
-        }
-    }, [darkMode]);
-
-
-    const toggleDarkMode = () => {
-        setDarkMode(prevMode => !prevMode);
-    };
 
 
     //  create User Profile in Register Page
@@ -81,12 +67,16 @@ const FirebaseProvider = ({ children }) => {
         return () => unsubscribe();
     }, [])
 
-    const allValue = { createUser, updateUserProfile, signInUser, googleSingIn, githubSignIn, twitterSignIn, user, setUser, logOut, loading, toggleDarkMode, darkMode }
+    const allValue = { createUser, updateUserProfile, signInUser, googleSingIn, githubSignIn, twitterSignIn, user, setUser, logOut, loading }
     return (
         <AuthContext.Provider value={allValue}>
             {children}
         </AuthContext.Provider  >
     );
+};
+
+FirebaseProvider.propTypes = {
+    children: PropTypes.node.isRequired
 };
 
 export default FirebaseProvider;

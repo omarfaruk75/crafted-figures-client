@@ -8,9 +8,23 @@
   <title>Blue Gallery</title>
 </head>
 
-<body className="darkMode">
+<body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+  <script>
+    // Get the meta tag with the data-theme attribute
+    const metaTheme = document.querySelector('meta[data-theme]');
+
+    // Function to toggle between light and dark themes
+    function toggleTheme() {
+      const currentTheme = metaTheme.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      metaTheme.setAttribute('data-theme', newTheme);
+    }
+
+    // Listen for theme change events (example: click event)
+    document.addEventListener('click', toggleTheme);
+  </script>
 </body>
 
 </html>

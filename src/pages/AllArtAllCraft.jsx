@@ -1,13 +1,23 @@
+import { useLoaderData } from "react-router-dom";
+import AllArtAllCraftCard from "../components/AllArtAllCraftCard";
 
 
 
 const AllArtAllCraft = () => {
 
-
+    const craftItems = useLoaderData();
 
     return (
         <div>
-            <h2>This is all art all craft page</h2>
+            <div className="my-12"  >
+                <h1 className="text-5xl text-center font-medium">All Art All Crafted Paper </h1>
+                <div className="grid grid-cols-3 gap-2">
+                    {
+                        craftItems.map(craftItem => <AllArtAllCraftCard key={craftItem._id} craftItem={craftItem}></AllArtAllCraftCard>)
+                    }
+                </div>
+            </div>
+
 
 
 

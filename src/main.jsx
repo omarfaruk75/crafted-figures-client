@@ -14,6 +14,9 @@ import MyCraftItem from './pages/MyCraftItem.jsx'
 import PrivateRoute from './components/PrivateRoute.jsx'
 import UpdateCraftItem from './components/UpdateCraftItem.jsx'
 import DetailsCraftsItem from './components/DetailsCraftsItem.jsx'
+import Footer from './components/Footer.jsx'
+import Contact from './components/Contact.jsx'
+
 
 
 const router = createBrowserRouter([
@@ -30,6 +33,7 @@ const router = createBrowserRouter([
       {
         path: '/allartallcraft',
         element: <AllArtAllCraft></AllArtAllCraft>,
+        loader: () => fetch('http://localhost:5000/additem')
 
 
       },
@@ -39,7 +43,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/mycraftitem',
-        element: <PrivateRoute><MyCraftItem></MyCraftItem></PrivateRoute>
+        element: <PrivateRoute><MyCraftItem></MyCraftItem></PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/additem')
       }
       ,
       {
@@ -57,8 +62,16 @@ const router = createBrowserRouter([
       },
       {
         path: '/details/:id',
-        element: <DetailsCraftsItem />,
+        element: <PrivateRoute><DetailsCraftsItem /></PrivateRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/additem/${params.id}`)
+      },
+      {
+        path: '/footer',
+        element: <Footer></Footer>
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>
       }
     ]
   }

@@ -5,6 +5,7 @@ import CraftItemSection from "../../components/CraftItemSection";
 
 
 
+
 const Home = () => {
     const craftItems = useLoaderData();
 
@@ -20,8 +21,6 @@ const Home = () => {
                     }
                 </div>
             </div>
-
-
 
         </div>
     );

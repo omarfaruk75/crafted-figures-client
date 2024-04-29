@@ -4,6 +4,8 @@ import Swal from "sweetalert2";
 
 const UpdateCraftItem = () => {
     const craftItem = useLoaderData();
+
+
     const { _id, itemName, stockStatus, subCategory, shortDescription, price, rating, processingTime, image, customizeAnswer } = craftItem;
 
 
@@ -40,6 +42,7 @@ const UpdateCraftItem = () => {
                         confirmButtonText: 'Cool'
                     })
                 }
+
             })
 
     }
@@ -141,7 +144,7 @@ const UpdateCraftItem = () => {
                         </select>
                     </div>
                 </div>
-                <input type="submit" value="Add Item" className="btn btn-block bg-[#00aeef] text-white " />
+                <input type="submit" value="Update Item" className="btn btn-block bg-[#00aeef] text-white " />
 
             </form>
         </div>

@@ -1,24 +1,49 @@
+import { useState } from "react";
 import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
+
 
 
 const AddCraftItem = () => {
+    const { user } = useAuth() || {};
+    const displayName = user ? user.displayName : '';
+    const email = user ? user.email : '';
+
+    //console.log(user.email, user.displayName);
+    const [formData, setFormData] = useState({
+
+        itemName: "",
+        subCategory: "",
+        shortDescription: "",
+        price: "",
+        rating: "",
+        processingTime: "",
+        image: "",
+        customizeAnswer: "",
+        stockStatus: "",
+        user: displayName,
+        userEmail: email
+    });
 
 
     const handleAddCraftItem = event => {
 
         event.preventDefault();
         const form = event.target;
+        // const user = user.displayName;
+        // const email = user.email;
         const itemName = form.item_name.value;
         const subCategory = form.subcategory_name.value;
-        const shortDescription = form.value;
+        const shortDescription = form.short_description.value;
         const price = form.price.value;
         const rating = form.rating.value;
         const processingTime = form.processing_time.value;
         const image = form.image.value;
         const customizeAnswer = form.customize_answer.value;
         const stockStatus = form.stockStatus.value;
-        const craftItem = { itemName, stockStatus, subCategory, shortDescription, price, rating, processingTime, image, customizeAnswer };
-        console.log(craftItem);
+
+        const craftItem = { itemName, stockStatus, subCategory, shortDescription, price, rating, processingTime, image, customizeAnswer, user: displayName, email };
+        // console.log(craftItem);
         fetch("http://localhost:5000/additem", {
             method: 'POST',
             headers: {
@@ -28,7 +53,7 @@ const AddCraftItem = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success',
@@ -36,6 +61,18 @@ const AddCraftItem = () => {
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
+                    setFormData({
+                        itemName: "",
+                        subCategory: "",
+                        shortDescription: "",
+                        price: "",
+                        rating: "",
+                        processingTime: "",
+                        image: "",
+                        customizeAnswer: "",
+                        stockStatus: ""
+                    });
+
                 }
             })
 

@@ -50,7 +50,7 @@ const CraftItemSection = ({ craftItem }) => {
                     <div className="card-body">
                         <p className="card-title">Craft Item:<b>{itemName}</b></p>
 
-                        <p>Short Description:  {shortDescription}<Link to={`/details/${_id}`} className="text-primary">Read More</Link></p>
+                        <p>Short Description:  {shortDescription?.slice(1, 100)}<Link to={`/details/${_id}`} className="text-primary">View Details</Link></p>
                         <div className="flex flex-row justify-between">
                             <p><b>Sub Category</b>:{subCategory} </p>
                             <p><b>Customization</b> :{customizeAnswer} </p>
@@ -66,12 +66,11 @@ const CraftItemSection = ({ craftItem }) => {
                         </div>
                         <div className="card-actions ">
                             <div className="btn-group btn-group-horizontal space-x-4">
-                                <button className="btn">View</button>
                                 <Link to={`updateItem/${_id}`}>
                                     <button className="btn">Edit</button>
                                 </Link>
                                 <button
-                                    onClick={() => handleDeleteItem(_id)} className="btn bg-orange-500">X</button>
+                                    onClick={() => handleDeleteItem(_id)} className="btn text-red-800">X</button>
                             </div>
                         </div>
                     </div>

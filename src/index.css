@@ -2,24 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Light Mode Styles */
-body {
-    color: #000000; /* Black text */
-}
-
-.navbar {
-  background-color: #f0f0f0;
-}
-
-/* Dark Mode Styles */
-.dark body {
-    color: #ffffff; /* White text */
-}
-
-
-.dark .navbar {
-  background-color: #1a1a1a;
-}
 
 
 

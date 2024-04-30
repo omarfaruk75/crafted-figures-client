@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" data-theme="light" />
+  <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blue Gallery</title>
@@ -11,20 +11,6 @@
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
-  <script>
-    // Get the meta tag with the data-theme attribute
-    const metaTheme = document.querySelector('meta[data-theme]');
-
-    // Function to toggle between light and dark themes
-    function toggleTheme() {
-      const currentTheme = metaTheme.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      metaTheme.setAttribute('data-theme', newTheme);
-    }
-
-    // Listen for theme change events (example: click event)
-    document.addEventListener('click', toggleTheme);
-  </script>
 </body>
 
 </html>

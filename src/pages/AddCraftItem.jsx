@@ -92,7 +92,7 @@ const AddCraftItem = () => {
                             <input type="text" name="item_name" placeholder="Crafted Item Name" className="input input-bordered w-full" />
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control md:w-1/2 md:ml-4">
                         <label className="label">
                             <span className="label-text">Sub Category Name</span>
                         </label>
@@ -111,7 +111,7 @@ const AddCraftItem = () => {
                             <textarea name="short_description" placeholder=" Short Description" className="w-full " id="" cols="10" rows="2"></textarea>
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control md:w-1/2 md:ml-4">
                         <label className="label">
                             <span className="label-text">Price</span>
                         </label>
@@ -131,7 +131,7 @@ const AddCraftItem = () => {
                         </label>
                     </div>
 
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control md:w-1/2 md:ml-4">
                         <label className="label">
                             <span className="label-text">Processing Time</span>
                         </label>
@@ -155,7 +155,7 @@ const AddCraftItem = () => {
                         </select>
                     </div>
 
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control md:w-1/2 md:ml-4">
                         <label className="label">
                             <span className="label-text">Image URL</span>
                         </label>

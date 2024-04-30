@@ -10,9 +10,9 @@ const MyCraftItemSection = ({ craftItem }) => {
 
                 <div>
 
-                    <div className="card card-compact bg-base-100 shadow-xl flex-grow">
+                    <div className="card card-compact bg-base-100  shadow-xl flex-grow">
                         <figure><img src={image} alt="Shoes" /></figure>
-                        <div className="card-body">
+                        <div className="card-body ">
                             <p className="card-title">Craft Item:<b>{itemName}</b></p>
 
                             <p>Short Description:  {shortDescription?.slice(1, 100)}<Link to={`/details/${_id}`} className="text-primary">View Details</Link></p>
@@ -28,9 +28,7 @@ const MyCraftItemSection = ({ craftItem }) => {
                                 <Link to={`/updateItem/${_id}`}>
                                     <button className="btn">Update</button>
                                 </Link>
-                                {/* <Link >
-                                    <button className="btn">Update</button>
-                                </Link> */}
+
                             </div>
 
                         </div>

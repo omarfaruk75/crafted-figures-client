@@ -11,7 +11,7 @@ const DetailsCraftsItem = () => {
         <div className="my-12">
 
             <div className="bg-[#f8f7fc]">
-                <div className="flex flex-row justify-between items-center gap-x-8 ">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-x-8 ">
                     <div className="flex-1"><img src={image} alt="craft item" /></div>
                     <div className="flex-1  flex flex-col gap-y-4">
                         <p className="text-3xl font-medium">{itemName}</p>

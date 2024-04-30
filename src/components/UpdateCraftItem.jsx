@@ -22,6 +22,8 @@ const UpdateCraftItem = () => {
         const image = form.image.value;
         const customizeAnswer = form.customize_answer.value;
         const stockStatus = form.stockStatus.value;
+
+        console.log(shortDescription)
         const updateCraftItem = { _id, itemName, stockStatus, subCategory, shortDescription, price, rating, processingTime, image, customizeAnswer };
         console.log(updateCraftItem);
         fetch(`https://crafted-figures.vercel.app/additem/${_id}`, {

@@ -19,7 +19,7 @@ const AllArtAllCraftCard = ({ craftItem }) => {
                         <div className="card-body">
                             <p className="card-title">Craft Item:<b>{itemName}</b></p>
 
-                            <p>Short Description:  {shortDescription?.slice(1, 100)}<Link to={`/details/${_id}`} className="text-primary">View Details</Link></p>
+                            <p>Short Description:  {shortDescription?.slice(0, 120)}<Link to={`/details/${_id}`} className="text-primary">View Details</Link></p>
                             <div className="flex flex-row justify-between">
                                 <p><b>Sub Category</b>:{subCategory} </p>
                                 <p><b>Price</b>: ${price}</p>

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { FaRegEdit } from "react-icons/fa";
 
 const MyCraftItemSection = ({ craftItem }) => {
     const { _id, itemName, stockStatus, subCategory, shortDescription, price, rating, image } = craftItem;
@@ -15,7 +16,7 @@ const MyCraftItemSection = ({ craftItem }) => {
                         <div className="card-body ">
                             <p className="card-title">Craft Item:<b>{itemName}</b></p>
 
-                            <p>Short Description:  {shortDescription?.slice(1, 100)}<Link to={`/details/${_id}`} className="text-primary">View Details</Link></p>
+                            <p>Short Description:  {shortDescription?.slice(0, 120)}<Link to={`/details/${_id}`} className="text-primary"> View Details</Link></p>
                             <div className="flex flex-row justify-between">
                                 <p><b>Sub Category</b>:{subCategory} </p>
                                 <p><b>Price</b>: ${price}</p>
@@ -26,7 +27,7 @@ const MyCraftItemSection = ({ craftItem }) => {
                             </div>
                             <div className="card-actions ">
                                 <Link to={`/updateItem/${_id}`}>
-                                    <button className="btn">Update</button>
+                                    <button className="btn"><FaRegEdit /></button>
                                 </Link>
 
                             </div>
